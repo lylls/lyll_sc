@@ -1,0 +1,17 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8769
+spring:
+  application:
+    name: service-zuul
+zuul:
+  routes:
+    manage:
+      path: /manage/**
+      serviceId: manage-web
+    isblog:
+      path: /isblog/**
+      serviceId: isblog-web
